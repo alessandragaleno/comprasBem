@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 
-class MapScreens extends StatefulWidget {
+class MapScreen extends StatefulWidget {
   @override
-  _MapScreensState createState() => _MapScreensState();
+  _MapScreenState createState() => _MapScreenState();
 
 }
 
 class  _MapScreenState extends State<MapScreen> {
   late GoogleMapController _mapController;
-  latLng _userLocaton = LatLng (-23.5505, -46.6333); //padrão: São Paulo
+  LatLng _userLocaton = LatLng (-23.5505, -46.6333); //padrão: São Paulo
 
   @override
   void initState() {
