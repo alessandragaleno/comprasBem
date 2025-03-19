@@ -10,7 +10,7 @@ class MapScreen extends StatefulWidget {
 
 class  _MapScreenState extends State<MapScreen> {
   late GoogleMapController _mapController;
-  LatLng _userLocaton = LatLng (-23.5505, -46.6333); //padrão: São Paulo
+  LatLng _userLocation = LatLng (-23.5505, -46.6333); //padrão: São Paulo
 
   @override
   void initState() {
@@ -23,7 +23,7 @@ class  _MapScreenState extends State<MapScreen> {
     LocationPermission permission;
 
   // verifica se o GPS está ativado
-  serviceEnable = await Geolocator.isLocationServiceEnable();
+  serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
       return;
     }
@@ -45,7 +45,7 @@ class  _MapScreenState extends State<MapScreen> {
 
     // Move a câmera para a localização do usuário
     _mapController.animateCamera(
-      CameraUpdate.newCameraPosition(_userLocaton)
+      CameraUpdate.newLatLng(_userLocation)
     );
   }
 
